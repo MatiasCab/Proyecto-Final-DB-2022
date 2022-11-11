@@ -16,5 +16,18 @@ namespace Aplicacion_1
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            List<Permiso> permisos = MySQLHandler.getInstance().RetrieveData();
+
+            this.dataGridVPermisos.Rows.Clear();
+
+            foreach (Permiso permiso in permisos)
+            {
+                this.dataGridVPermisos.Rows.Add(permiso.user_id, permiso.app_id, permiso.rol_neg_id, permiso.fecha_solicitud, permiso.fecha_autorizacion == null ? "NULL" : permiso.fecha_autorizacion.ToString(), permiso.estado);
+            }
+        }
     }
 }
+ 
