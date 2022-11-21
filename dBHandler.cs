@@ -1,11 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
-using MySql.Data;
 using System;
 using System.Data;
 using System.Collections.Generic;
-
-using System.Drawing.Text;
-using System.Management.Instrumentation;
 
 namespace Aplicacion_1
 {
@@ -48,37 +44,15 @@ namespace Aplicacion_1
             }
         }
 
-        public List<Permiso> RetrieveData()
+        public MySqlDataReader GetUser(string hashedPassword, string userId)
         {
             this.connectToDatabase();
-            string sqlQuery = "SELECT * FROM PERMISOS";
+            string sqlQuery = $"CALL spGetUser('{hashedPassword}', {userId})";
 
             var cmd = new MySqlCommand(sqlQuery, db);
 
-            var rdr = cmd.ExecuteReader();
+            return cmd.ExecuteReader();
 
-            List<Permiso> permsisos = new List<Permiso>();
-
-            while (rdr.Read()) {
-                Console.WriteLine(rdr.GetValue(0));
-                Console.WriteLine(rdr.GetValue(1));
-                Console.WriteLine(rdr.GetValue(2));
-
-                DateTime? fechaAutorizacion = null; 
-
-                if (!rdr.IsDBNull(4))
-                {
-                    fechaAutorizacion = rdr.GetDateTime(4);
-                }
-
-                Permiso permiso = new Permiso(rdr.GetInt32(0), rdr.GetString(1), rdr.GetInt32(2), rdr.GetDateTime(3), fechaAutorizacion, rdr.GetBoolean(5));
-                permsisos.Add(permiso);
-            }
-
-            //Para el if -> IsDBNull o rdr.getValue(x).getType() == System.DBNull
-
-            db.Close();
-            return permsisos;
         }
 
 

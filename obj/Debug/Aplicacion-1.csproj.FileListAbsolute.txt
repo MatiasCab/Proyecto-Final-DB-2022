@@ -38,3 +38,5 @@ C:\Users\Matias\Documents\Universidad L\Base de Datos\Proyecto\Aplicacion-1\bin\
 C:\Users\Matias\Documents\Universidad L\Base de Datos\Proyecto\Aplicacion-1\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\Matias\Documents\Universidad L\Base de Datos\Proyecto\Aplicacion-1\obj\Debug\Aplicacion_1.Form1.resources
 C:\Users\Matias\Documents\Universidad L\Base de Datos\Proyecto\Aplicacion-1\obj\Debug\Aplicacion-1.csproj.CopyComplete
+C:\Users\Matias\Documents\Universidad L\Base de Datos\Proyecto\Aplicacion-1\obj\Debug\Aplicacion_1.Form2.resources
+C:\Users\Matias\Documents\Universidad L\Base de Datos\Proyecto\Aplicacion-1\obj\Debug\Aplicacion_1.Form3.resources
