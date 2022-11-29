@@ -180,24 +180,20 @@ namespace Aplicacion_1
         public static LinkedList<Permiso> GetPermisos(){
             MySqlDataReader appReader = MySQLHandler.getInstance().GetPermisos();
 
-            bool isFirst = true;
             LinkedList<Permiso> permisos = new LinkedList<Permiso>();
 
             while (appReader.Read())
             {
-                if (isFirst)
-                {
-                    isFirst = false;
-                    Permiso permiso = new Permiso(appReader.GetInt32(0), appReader.GetString(1), appReader.GetInt32(2), appReader.GetDateTime(3), appReader.GetDateTime(4), appReader.GetBoolean(5));
+                    DateTime date = new DateTime(0001, 01, 01, 00, 00, 00);
+                    if (!appReader.IsDBNull(4))
+                    {
+                        date = appReader.GetDateTime(4);
+                    }
+                    Permiso permiso = new Permiso(appReader.GetInt32(0), appReader.GetString(1), appReader.GetInt32(2), appReader.GetDateTime(3), date, appReader.GetBoolean(5));
                     permisos.AddLast(permiso);
-                }
                 
             }
 
-            if (isFirst)
-            {
-                return null;
-            }
             MySQLHandler.getInstance().close(appReader);
             return permisos;
         }

@@ -47,3 +47,4 @@ C:\Users\Matias\Documents\Universidad L\Base de Datos\Proyecto\Aplicacion-1\obj\
 C:\Users\Matias\Documents\Universidad L\Base de Datos\Proyecto\Aplicacion-1\obj\Debug\Aplicacion_1.Form6.resources
 C:\Users\Matias\Documents\Universidad L\Base de Datos\Proyecto\Aplicacion-1\obj\Debug\Aplicacion_1.Form7.resources
 C:\Users\Matias\Documents\Universidad L\Base de Datos\Proyecto\Aplicacion-1\obj\Debug\Aplicacion_1.Form8.resources
+C:\Users\Matias\Documents\Universidad L\Base de Datos\Proyecto\Aplicacion-1\obj\Debug\Aplicacion_1.Form9.resources

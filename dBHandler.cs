@@ -128,10 +128,11 @@ namespace Aplicacion_1
             cmd.ExecuteNonQuery();
         }
 
-        public void CreatePermiso(int user_id, string app_id, int rol_neg_id, DateTime fecha_solicitud, DateTime? fecha_autorizacion, bool estado)
+        public void CreatePermiso(int user_id, string app_id, int rol_neg_id, DateTime date, DateTime? fecha_autorizacion, bool estado)
         {
             this.connectToDatabase();
-            string sqlQuery = $"INSERT INTO PERMISOS VALUES ('{user_id}', '{app_id}', '{rol_neg_id}', '{fecha_solicitud}', '{fecha_autorizacion}', '{estado}')";
+            var dateTime = $"{date.Year}-{date.Month}-{date.Day} {date.Hour}:{date.Minute}:{date.Second}";
+            string sqlQuery = $"INSERT INTO PERMISOS VALUES ('{user_id}', '{app_id}', '{rol_neg_id}', '{dateTime}', '{new DateTime(0001,01,01,00,00,00)}', {estado})";
 
             var cmd = new MySqlCommand(sqlQuery, db);
             cmd.ExecuteNonQuery();
@@ -140,7 +141,9 @@ namespace Aplicacion_1
         public void UpdatePermiso(Permiso permiso)
         {
             this.connectToDatabase();
-            string sqlQuery = $"UPDATE PERMISOS SET fecha_autorizacion = {permiso.fecha_autorizacion}, estado = '{permiso.estado}' WHERE user_id = {permiso.user_id} AND app_id = '{permiso.app_id}' AND rol_neg_id = {permiso.rol_neg_id} AND fecha_solicitud = {permiso.fecha_solicitud}";
+            var date = permiso.fecha_autorizacion;
+            var dateTime = $"{date.Year}-{date.Month}-{date.Day} {date.Hour}:{date.Minute}:{date.Second}";
+            string sqlQuery = $"UPDATE PERMISOS SET fecha_autorizacion = '{dateTime}' ,estado = {permiso.estado} WHERE user_id = {permiso.user_id} AND app_id = '{permiso.app_id}' AND rol_neg_id = {permiso.rol_neg_id}";
 
             var cmd = new MySqlCommand(sqlQuery, db);
             cmd.ExecuteNonQuery();
@@ -158,7 +161,7 @@ namespace Aplicacion_1
         public MySqlDataReader GetPersonasPreguntas(int id)
         {
             this.connectToDatabase();
-            string sqlQuery = $"SELECT * PERSONAS_PREGUNTAS WHERE user_id = {id}";
+            string sqlQuery = $"SELECT * FROM PERSONAS_PREGUNTAS WHERE user_id = {id}";
 
             var cmd = new MySqlCommand(sqlQuery, db);
             return cmd.ExecuteReader();

@@ -82,7 +82,8 @@ namespace Aplicacion_1
 
         private void menusGrid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            var form = new Form2();
+            form.ShowDialog();
         }
 
         private void rolesAplicativosGrid_CellClick(object sender, DataGridViewCellEventArgs e)

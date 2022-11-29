@@ -13,7 +13,7 @@ namespace Aplicacion_1
 {
     public partial class Form2 : Form
     {
-        private Permiso permisoSeleccionado = null;
+        private Permiso permisoSeleccionado = new Permiso(0,null,0,DateTime.Now, new DateTime(0001, 01, 01, 00, 00, 00), false);
         public Form2()
         {
             InitializeComponent();
@@ -22,6 +22,7 @@ namespace Aplicacion_1
 
         private void setData()
         {
+            this.dataGridView1.Rows.Clear();
             LinkedList<Permiso> permisos = Logica.GetPermisos();
             foreach (Permiso permiso in permisos)
             {
@@ -38,7 +39,8 @@ namespace Aplicacion_1
             this.permisoSeleccionado.estado = true;
             Logica.UpdatePermiso(this.permisoSeleccionado);
 
-            this.permisoSeleccionado.fecha_autorizacion = null;
+            this.permisoSeleccionado.fecha_autorizacion = DateTime.Now;
+            this.setData();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -49,6 +51,7 @@ namespace Aplicacion_1
 
         private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
+
             int selectedCellCount = this.dataGridView1.GetCellCount(DataGridViewElementStates.Selected);
 
             int ciCell = 0;
@@ -72,7 +75,7 @@ namespace Aplicacion_1
                     this.permisoSeleccionado.app_id = appidCell;
                     this.permisoSeleccionado.rol_neg_id = rolnegCell;
                     this.permisoSeleccionado.fecha_solicitud = fechasolicitadoCell;
-                    this.permisoSeleccionado.fecha_autorizacion = null;
+                    this.permisoSeleccionado.fecha_autorizacion = new DateTime(0001, 01, 01, 00, 00, 00);
                     this.permisoSeleccionado.estado = estadoCell;
                 }
                 else

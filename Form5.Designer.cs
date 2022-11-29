@@ -50,10 +50,11 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.aplicativosGrid = new System.Windows.Forms.DataGridView();
-            this.appSelected = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rolesGrid = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.appSelected = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.aplicativosGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rolesGrid)).BeginInit();
             this.SuspendLayout();
@@ -119,21 +120,21 @@
             // 
             // respuesta3
             // 
-            this.respuesta3.Location = new System.Drawing.Point(433, 125);
+            this.respuesta3.Location = new System.Drawing.Point(513, 125);
             this.respuesta3.Name = "respuesta3";
             this.respuesta3.Size = new System.Drawing.Size(161, 20);
             this.respuesta3.TabIndex = 11;
             // 
             // respuesta2
             // 
-            this.respuesta2.Location = new System.Drawing.Point(433, 85);
+            this.respuesta2.Location = new System.Drawing.Point(513, 84);
             this.respuesta2.Name = "respuesta2";
             this.respuesta2.Size = new System.Drawing.Size(161, 20);
             this.respuesta2.TabIndex = 12;
             // 
             // respuesta1
             // 
-            this.respuesta1.Location = new System.Drawing.Point(433, 41);
+            this.respuesta1.Location = new System.Drawing.Point(513, 37);
             this.respuesta1.Name = "respuesta1";
             this.respuesta1.Size = new System.Drawing.Size(161, 20);
             this.respuesta1.TabIndex = 13;
@@ -143,7 +144,7 @@
             this.pregunta1.FormattingEnabled = true;
             this.pregunta1.Location = new System.Drawing.Point(218, 40);
             this.pregunta1.Name = "pregunta1";
-            this.pregunta1.Size = new System.Drawing.Size(209, 21);
+            this.pregunta1.Size = new System.Drawing.Size(261, 21);
             this.pregunta1.TabIndex = 15;
             this.pregunta1.SelectedIndexChanged += new System.EventHandler(this.pregunta1_SelectedIndexChanged);
             this.pregunta1.SelectedValueChanged += new System.EventHandler(this.pregunta1_SelectedValueChanged);
@@ -153,7 +154,7 @@
             this.pregunta2.FormattingEnabled = true;
             this.pregunta2.Location = new System.Drawing.Point(218, 84);
             this.pregunta2.Name = "pregunta2";
-            this.pregunta2.Size = new System.Drawing.Size(209, 21);
+            this.pregunta2.Size = new System.Drawing.Size(261, 21);
             this.pregunta2.TabIndex = 16;
             this.pregunta2.SelectedValueChanged += new System.EventHandler(this.pregunta2_SelectedValueChanged);
             // 
@@ -162,7 +163,7 @@
             this.pregunta3.FormattingEnabled = true;
             this.pregunta3.Location = new System.Drawing.Point(218, 125);
             this.pregunta3.Name = "pregunta3";
-            this.pregunta3.Size = new System.Drawing.Size(209, 21);
+            this.pregunta3.Size = new System.Drawing.Size(261, 21);
             this.pregunta3.TabIndex = 17;
             this.pregunta3.SelectedValueChanged += new System.EventHandler(this.pregunta3_SelectedValueChanged);
             // 
@@ -240,19 +241,6 @@
             this.aplicativosGrid.Size = new System.Drawing.Size(274, 166);
             this.aplicativosGrid.TabIndex = 25;
             // 
-            // appSelected
-            // 
-            this.appSelected.FillWeight = 10F;
-            this.appSelected.HeaderText = "";
-            this.appSelected.Name = "appSelected";
-            this.appSelected.Width = 30;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn1.HeaderText = "Aplicativo";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
             // rolesGrid
             // 
             this.rolesGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -269,11 +257,37 @@
             this.dataGridViewTextBoxColumn3.HeaderText = "Roles";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             // 
+            // appSelected
+            // 
+            this.appSelected.FillWeight = 10F;
+            this.appSelected.HeaderText = "";
+            this.appSelected.Name = "appSelected";
+            this.appSelected.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.appSelected.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.appSelected.Width = 30;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn1.HeaderText = "Aplicativo";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(301, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(115, 24);
+            this.label1.TabIndex = 27;
+            this.label1.Text = "Bienvenido";
+            // 
             // Form5
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(745, 379);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.rolesGrid);
             this.Controls.Add(this.aplicativosGrid);
             this.Controls.Add(this.label7);
@@ -331,10 +345,11 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridView aplicativosGrid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn appSelected;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridView rolesGrid;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn appSelected;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.Label label1;
     }
 }

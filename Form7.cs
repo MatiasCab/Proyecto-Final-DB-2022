@@ -21,6 +21,7 @@ namespace Aplicacion_1
         {
             InitializeComponent();
             this.user = user;
+            loadQuestions();
         }
 
         private void loadQuestions()
@@ -36,6 +37,7 @@ namespace Aplicacion_1
                     comboBox1.Items.Add(pregunta.pregunta);
                 }
             }
+            comboBox1.SelectedValue=this.preguntas.First.Value.pregunta;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -74,6 +76,7 @@ namespace Aplicacion_1
             {
                 this.Close();
                 Form9 form9 = new Form9(this.user);
+                form9.Show();
             }
             else
             {

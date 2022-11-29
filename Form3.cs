@@ -23,10 +23,24 @@ namespace Aplicacion_1
             string password = this.password.Text;
 
 
-            var form = new Form1(Logica.LoginHashPass(userId, password));
+            //var form = new Form1(Logica.LoginHashPass(userId, password));
+            //Usuario user = Logica.Login(userId, password);
+            Usuario user = Logica.LoginHashPass(userId, password);
+            if(user == null){
+                MessageBox.Show("Usuario o contraseña incorrectos");
+            }
+            else{
+            var form = new Form1(user);
             var form3 = new Form5();
             form3.ShowDialog();
             form.ShowDialog();
+            }
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            var form8 = new Form8();
+            form8.ShowDialog();
         }
     }
 }

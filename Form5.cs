@@ -14,6 +14,7 @@ namespace Aplicacion_1
     {
         private LinkedList<Pregunta> preguntas = new LinkedList<Pregunta>();
         private LinkedList<Aplicativo> aplicativos = null;
+        private LinkedList<RolesNegocio> rolesNeg = null;
         public Form5()
         {
             InitializeComponent();
@@ -29,9 +30,9 @@ namespace Aplicacion_1
 
         private void getRoles()
         {
-            LinkedList<RolesNegocio> roles = Logica.GetRoles();
+            this.rolesNeg = Logica.GetRoles();
 
-            foreach(RolesNegocio rol in roles)
+            foreach(RolesNegocio rol in this.rolesNeg)
             {
                 this.rolesGrid.Rows.Add(rol.descripcion_rol_neg);
             }
@@ -206,9 +207,17 @@ namespace Aplicacion_1
 
                 LinkedList<string> appIds = this.getAppId();
 
-                int role = Int32.Parse(this.rolesGrid.SelectedCells[0].Value.ToString());               
+                string role = this.rolesGrid.SelectedCells[0].Value.ToString();
+                int roleId = 0;
+                foreach(RolesNegocio rolneg in this.rolesNeg)
+                {
+                    if(rolneg.descripcion_rol_neg == role)
+                    {
+                        roleId = rolneg.rol_neg_id;
+                    }
+                }
                 foreach(string appId in appIds){
-                    Logica.CreatePermiso(ci, appId, role, DateTime.Now, null, false);
+                    Logica.CreatePermiso(ci, appId, roleId, DateTime.Now, null, false);
                 }
 
 

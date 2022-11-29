@@ -32,8 +32,8 @@
             this.menuName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.rolesAplicativosGrid = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
             this.rolesApp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.menusGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rolesAplicativosGrid)).BeginInit();
             this.SuspendLayout();
@@ -43,7 +43,7 @@
             this.menusGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.menusGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.menuName});
-            this.menusGrid.Location = new System.Drawing.Point(262, 147);
+            this.menusGrid.Location = new System.Drawing.Point(262, 66);
             this.menusGrid.Name = "menusGrid";
             this.menusGrid.Size = new System.Drawing.Size(526, 291);
             this.menusGrid.TabIndex = 0;
@@ -59,9 +59,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(482, 114);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(472, 33);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 13);
+            this.label1.Size = new System.Drawing.Size(68, 18);
             this.label1.TabIndex = 1;
             this.label1.Text = "MENUS";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -71,20 +72,11 @@
             this.rolesAplicativosGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.rolesAplicativosGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.rolesApp});
-            this.rolesAplicativosGrid.Location = new System.Drawing.Point(12, 147);
+            this.rolesAplicativosGrid.Location = new System.Drawing.Point(12, 66);
             this.rolesAplicativosGrid.Name = "rolesAplicativosGrid";
             this.rolesAplicativosGrid.Size = new System.Drawing.Size(240, 291);
             this.rolesAplicativosGrid.TabIndex = 2;
             this.rolesAplicativosGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.rolesAplicativosGrid_CellClick);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(67, 114);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(115, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "ROLES APLICATIVOS";
             // 
             // rolesApp
             // 
@@ -93,11 +85,21 @@
             this.rolesApp.Name = "rolesApp";
             this.rolesApp.ReadOnly = true;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(36, 33);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(190, 20);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "ROLES APLICATIVOS";
+            // 
             // Form4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 376);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.rolesAplicativosGrid);
             this.Controls.Add(this.label1);
