@@ -62,7 +62,7 @@ namespace Aplicacion_1
                     }
                     else
                     {
-
+                        MessageBox.Show("NO HAY DATOS");
                     }
                     
                 }
@@ -90,8 +90,15 @@ namespace Aplicacion_1
 
         private void menusGrid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            var form = new Form2();
-            form.ShowDialog();
+            if(this.menusGrid.SelectedCells[0].Value.ToString() == "Autorizar permisos")
+            {
+                var form = new Form2();
+                form.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Debe seleccionar una pregunta para cada campo");
+            }
         }
 
         private void rolesAplicativosGrid_CellClick(object sender, DataGridViewCellEventArgs e)

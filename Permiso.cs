@@ -10,6 +10,11 @@ namespace Aplicacion_1
         public DateTime fecha_solicitud { get; set; }
         public DateTime fecha_autorizacion { get; set; }
         public bool estado { get; set; }
+        public string appName { get; set; }
+
+        public string rolNegID { get; set; }
+
+
 
         public Permiso(int user_id, string app_id, int rol_neg_id, DateTime fecha_solicitud,
             DateTime fecha_autorizacion, bool estado)

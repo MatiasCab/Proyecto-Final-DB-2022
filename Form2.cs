@@ -26,7 +26,7 @@ namespace Aplicacion_1
             LinkedList<Permiso> permisos = Logica.GetPermisos();
             foreach (Permiso permiso in permisos)
             {
-                this.dataGridView1.Rows.Add(permiso.user_id, permiso.app_id, permiso.rol_neg_id, permiso.fecha_solicitud, permiso.fecha_autorizacion.Year == 0001 ? "----" : permiso.fecha_autorizacion.ToString(), permiso.estado ? "Habilitado" : "Desabilitado");
+                this.dataGridView1.Rows.Add(permiso.user_id, permiso.app_id, permiso.rol_neg_id, permiso.fecha_solicitud, permiso.fecha_autorizacion.Year == 0001 ? "----" : permiso.fecha_autorizacion.ToString(), permiso.estado ? "Habilitado" : "Deshabilitado");
             }
         }
 
