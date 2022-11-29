@@ -206,7 +206,11 @@ namespace Aplicacion_1
 
                 LinkedList<string> appIds = this.getAppId();
 
-                string role = this.rolesGrid.SelectedCells[0].Value.ToString();this.role
+                int role = Int32.Parse(this.rolesGrid.SelectedCells[0].Value.ToString());               
+                foreach(string appId in appIds){
+                    Logica.CreatePermiso(ci, appId, role, DateTime.Now, null, false);
+                }
+
 
             }else{
                 MessageBox.Show("Debe seleccionar una pregunta para cada campo");
