@@ -30,13 +30,13 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label3 = new System.Windows.Forms.Label();
             this.userIdPerGrid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.appColumnPerGrid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.roleNegColumnPerGrid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.solDateColumnPerGrid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.autDateColumnPerGrid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stateColumnPerGrid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label3 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -67,16 +67,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(758, 329);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(257, 64);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(239, 24);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Solicitudes de permisos:";
             // 
             // userIdPerGrid
             // 
@@ -120,6 +110,16 @@
             this.stateColumnPerGrid.Name = "stateColumnPerGrid";
             this.stateColumnPerGrid.ReadOnly = true;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(257, 64);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(239, 24);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Solicitudes de permisos:";
+            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(606, 22);
@@ -150,7 +150,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
             this.Name = "Form2";
-            this.Text = "Form2";
+            this.Text = "Menu permisos";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

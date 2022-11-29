@@ -66,7 +66,7 @@ namespace Aplicacion_1
                 rolnegCell = Int32.Parse(this.dataGridView1.SelectedCells[2].Value.ToString());
                 fechasolicitadoCell = Convert.ToDateTime(this.dataGridView1.SelectedCells[3].Value.ToString());
                 //fecha autorizacion no es necesaria
-                estadoCell = Convert.ToBoolean(this.dataGridView1.SelectedCells[5].Value.ToString());
+                estadoCell = Convert.ToBoolean(this.dataGridView1.SelectedCells[5].Value.ToString() == "Habilitado");
 
                 if (fechasolicitadoCell != null)
                 {

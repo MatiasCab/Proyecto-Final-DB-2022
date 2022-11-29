@@ -69,7 +69,7 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
             this.Name = "Form9";
-            this.Text = "Form9";
+            this.Text = "Nueva contraseña";
             this.ResumeLayout(false);
             this.PerformLayout();
 

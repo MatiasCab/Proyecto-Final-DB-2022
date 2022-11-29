@@ -69,7 +69,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.userId);
             this.Name = "Form8";
-            this.Text = "Form8";
+            this.Text = "Usuario recuperar";
             this.ResumeLayout(false);
             this.PerformLayout();
 

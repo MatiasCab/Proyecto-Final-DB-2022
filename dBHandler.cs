@@ -117,7 +117,7 @@ namespace Aplicacion_1
 
             var cmd = new MySqlCommand(sqlQuery, db);
             var appReader = cmd.ExecuteReader();
-            MySQLHandler.getInstance().close(appReader);
+            close(appReader);
         }
 
         public void CreateUser(int id, string nombre, string apellido, string direccion, string ciudad, string departamento, string hashpwd)
@@ -127,7 +127,7 @@ namespace Aplicacion_1
 
             var cmd = new MySqlCommand(sqlQuery, db);
             var appReader = cmd.ExecuteReader();
-            MySQLHandler.getInstance().close(appReader);
+            close(appReader);
 
         }
 
@@ -139,7 +139,7 @@ namespace Aplicacion_1
 
             var cmd = new MySqlCommand(sqlQuery, db);
             var appReader = cmd.ExecuteReader();
-            MySQLHandler.getInstance().close(appReader);
+            close(appReader);
         }
 
         public void UpdatePermiso(Permiso permiso)
@@ -151,7 +151,7 @@ namespace Aplicacion_1
 
             var cmd = new MySqlCommand(sqlQuery, db);
             var appReader = cmd.ExecuteReader();
-            MySQLHandler.getInstance().close(appReader);
+            close(appReader);
         }
 
         public MySqlDataReader GetPermisos()
@@ -199,7 +199,7 @@ namespace Aplicacion_1
 
             var cmd = new MySqlCommand(sqlQuery, db);
             var appReader = cmd.ExecuteReader();
-            MySQLHandler.getInstance().close(appReader);
+            close(appReader);
         }
     }
 }

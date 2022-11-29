@@ -81,7 +81,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form7";
-            this.Text = "Form7";
+            this.Text = "Recuperar contraseña pregunta";
             this.ResumeLayout(false);
             this.PerformLayout();
 

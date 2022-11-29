@@ -97,7 +97,7 @@ namespace Aplicacion_1
             }
             else
             {
-                MessageBox.Show("Debe seleccionar una pregunta para cada campo");
+                MessageBox.Show("Usted intenta acceder a un menu no implementado.");
             }
         }
 

@@ -18,6 +18,8 @@ namespace Aplicacion_1
         {
             this.user = user;
             InitializeComponent();
+            this.username.Text = user.nombre;
+            this.userUbication.Text = user.ciudad;
             this.setData(user);
             this.setAplicativosData();
         }

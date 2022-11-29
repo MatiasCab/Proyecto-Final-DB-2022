@@ -34,8 +34,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.aplicativosGrid = new System.Windows.Forms.DataGridView();
-            this.label4 = new System.Windows.Forms.Label();
             this.appNameColumnGrid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label4 = new System.Windows.Forms.Label();
+            this.username = new System.Windows.Forms.Label();
+            this.userUbication = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.rolesGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aplicativosGrid)).BeginInit();
             this.SuspendLayout();
@@ -98,6 +100,13 @@
             this.aplicativosGrid.TabIndex = 6;
             this.aplicativosGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.aplicativosGrid_CellClick);
             // 
+            // appNameColumnGrid
+            // 
+            this.appNameColumnGrid.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.appNameColumnGrid.HeaderText = "Nombre";
+            this.appNameColumnGrid.Name = "appNameColumnGrid";
+            this.appNameColumnGrid.ReadOnly = true;
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -108,18 +117,31 @@
             this.label4.TabIndex = 7;
             this.label4.Text = "Aplicativos";
             // 
-            // appNameColumnGrid
+            // username
             // 
-            this.appNameColumnGrid.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.appNameColumnGrid.HeaderText = "Nombre";
-            this.appNameColumnGrid.Name = "appNameColumnGrid";
-            this.appNameColumnGrid.ReadOnly = true;
+            this.username.AutoSize = true;
+            this.username.Location = new System.Drawing.Point(66, 23);
+            this.username.Name = "username";
+            this.username.Size = new System.Drawing.Size(78, 13);
+            this.username.TabIndex = 8;
+            this.username.Text = "Nombreusuario";
+            // 
+            // userUbication
+            // 
+            this.userUbication.AutoSize = true;
+            this.userUbication.Location = new System.Drawing.Point(78, 50);
+            this.userUbication.Name = "userUbication";
+            this.userUbication.Size = new System.Drawing.Size(35, 13);
+            this.userUbication.TabIndex = 9;
+            this.userUbication.Text = "label6";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(836, 450);
+            this.Controls.Add(this.userUbication);
+            this.Controls.Add(this.username);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.aplicativosGrid);
             this.Controls.Add(this.label3);
@@ -127,7 +149,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.rolesGrid);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "VistaAplicativos";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.rolesGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.aplicativosGrid)).EndInit();
@@ -145,6 +167,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn roleColumnTR;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridViewTextBoxColumn appNameColumnGrid;
+        private System.Windows.Forms.Label username;
+        private System.Windows.Forms.Label userUbication;
     }
 }
 

@@ -68,11 +68,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(213, 54);
+            this.label2.Location = new System.Drawing.Point(174, 52);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(100, 42);
+            this.label2.Size = new System.Drawing.Size(187, 42);
             this.label2.TabIndex = 3;
-            this.label2.Text = "TAM";
+            this.label2.Text = "FORM 9!!";
             // 
             // Form6
             // 
@@ -84,7 +84,8 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Name = "Form6";
-            this.Text = "Form6";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Presentacion";
             this.ResumeLayout(false);
             this.PerformLayout();
 

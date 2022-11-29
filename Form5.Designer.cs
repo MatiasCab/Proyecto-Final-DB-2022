@@ -50,10 +50,10 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.aplicativosGrid = new System.Windows.Forms.DataGridView();
-            this.rolesGrid = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.appSelected = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rolesGrid = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.aplicativosGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rolesGrid)).BeginInit();
@@ -241,6 +241,21 @@
             this.aplicativosGrid.Size = new System.Drawing.Size(274, 166);
             this.aplicativosGrid.TabIndex = 25;
             // 
+            // appSelected
+            // 
+            this.appSelected.FillWeight = 10F;
+            this.appSelected.HeaderText = "";
+            this.appSelected.Name = "appSelected";
+            this.appSelected.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.appSelected.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.appSelected.Width = 30;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn1.HeaderText = "Aplicativo";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
             // rolesGrid
             // 
             this.rolesGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -256,21 +271,6 @@
             this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.dataGridViewTextBoxColumn3.HeaderText = "Roles";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // appSelected
-            // 
-            this.appSelected.FillWeight = 10F;
-            this.appSelected.HeaderText = "";
-            this.appSelected.Name = "appSelected";
-            this.appSelected.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.appSelected.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.appSelected.Width = 30;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn1.HeaderText = "Aplicativo";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             // 
             // label1
             // 
@@ -312,7 +312,7 @@
             this.Controls.Add(this.departamento);
             this.Controls.Add(this.userCI);
             this.Name = "Form5";
-            this.Text = "Form5";
+            this.Text = "Registro";
             this.Load += new System.EventHandler(this.Form5_Load);
             ((System.ComponentModel.ISupportInitialize)(this.aplicativosGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rolesGrid)).EndInit();

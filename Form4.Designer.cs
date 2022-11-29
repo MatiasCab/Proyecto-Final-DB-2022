@@ -105,7 +105,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menusGrid);
             this.Name = "Form4";
-            this.Text = "Form4";
+            this.Text = "Vista Menus";
             ((System.ComponentModel.ISupportInitialize)(this.menusGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rolesAplicativosGrid)).EndInit();
             this.ResumeLayout(false);

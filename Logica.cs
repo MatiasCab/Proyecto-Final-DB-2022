@@ -28,12 +28,11 @@ namespace Aplicacion_1
                 }
                 user.InsertRolNegApp(appReader.GetString(5), appReader.GetString(4));
             }
-
+            MySQLHandler.getInstance().close(appReader);
             if (isFirst)
             {
                 return null;
             }
-            MySQLHandler.getInstance().close(appReader);
             return user;
         }
 
@@ -74,12 +73,13 @@ namespace Aplicacion_1
                 user.InsertRolNegApp(appReader.GetString(5), appReader.GetString(4));
             }
 
+            MySQLHandler.getInstance().close(appReader);
+
             if (isFirst)
             {
                 return null;
             }
 
-            MySQLHandler.getInstance().close(appReader);
 
             bool logueoCorrecto = BCryptNet.Verify(password, user.hashpwd);
             if(logueoCorrecto){
