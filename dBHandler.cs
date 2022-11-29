@@ -116,7 +116,8 @@ namespace Aplicacion_1
             string sqlQuery = $"INSERT INTO PERSONAS_PREGUNTAS VALUES ({id}, {id_pregunta}, '{respuesta}')";
 
             var cmd = new MySqlCommand(sqlQuery, db);
-            cmd.ExecuteNonQuery();
+            var appReader = cmd.ExecuteReader();
+            MySQLHandler.getInstance().close(appReader);
         }
 
         public void CreateUser(int id, string nombre, string apellido, string direccion, string ciudad, string departamento, string hashpwd)
@@ -125,7 +126,9 @@ namespace Aplicacion_1
             string sqlQuery = $"INSERT INTO PERSONAS VALUES ('{id}', '{nombre}', '{apellido}', '{direccion}', '{ciudad}', '{departamento}', '{hashpwd}')";
 
             var cmd = new MySqlCommand(sqlQuery, db);
-            cmd.ExecuteNonQuery();
+            var appReader = cmd.ExecuteReader();
+            MySQLHandler.getInstance().close(appReader);
+
         }
 
         public void CreatePermiso(int user_id, string app_id, int rol_neg_id, DateTime date, DateTime? fecha_autorizacion, bool estado)
@@ -135,7 +138,8 @@ namespace Aplicacion_1
             string sqlQuery = $"INSERT INTO PERMISOS VALUES ('{user_id}', '{app_id}', '{rol_neg_id}', '{dateTime}', '{new DateTime(0001,01,01,00,00,00)}', {estado})";
 
             var cmd = new MySqlCommand(sqlQuery, db);
-            cmd.ExecuteNonQuery();
+            var appReader = cmd.ExecuteReader();
+            MySQLHandler.getInstance().close(appReader);
         }
 
         public void UpdatePermiso(Permiso permiso)
@@ -146,7 +150,8 @@ namespace Aplicacion_1
             string sqlQuery = $"UPDATE PERMISOS SET fecha_autorizacion = '{dateTime}' ,estado = {permiso.estado} WHERE user_id = {permiso.user_id} AND app_id = '{permiso.app_id}' AND rol_neg_id = {permiso.rol_neg_id}";
 
             var cmd = new MySqlCommand(sqlQuery, db);
-            cmd.ExecuteNonQuery();
+            var appReader = cmd.ExecuteReader();
+            MySQLHandler.getInstance().close(appReader);
         }
 
         public MySqlDataReader GetPermisos()
@@ -170,7 +175,7 @@ namespace Aplicacion_1
         public MySqlDataReader GetUserNoPass(string userId)
         {
             this.connectToDatabase();
-            string sqlQuery = $"SELECT * FROM vwGetUser WHERE user_id = {userId};";
+            string sqlQuery = $"SELECT * FROM vwGetUser WHERE user_id = {userId} AND estado = true;";
 
             var cmd = new MySqlCommand(sqlQuery, db);
 
@@ -193,7 +198,8 @@ namespace Aplicacion_1
             string sqlQuery = $"UPDATE PERSONAS SET  hashpwd = '{user.hashpwd}' WHERE user_id = {user.userId}";
 
             var cmd = new MySqlCommand(sqlQuery, db);
-            cmd.ExecuteReader();
+            var appReader = cmd.ExecuteReader();
+            MySQLHandler.getInstance().close(appReader);
         }
     }
 }

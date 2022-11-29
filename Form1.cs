@@ -27,6 +27,10 @@ namespace Aplicacion_1
             var aplicativos = user.rolesNegocio.Values;
             var roles = user.rolesNegocio.Keys;
 
+            if (user.rolesNegocio.Keys.Count == 0 )
+            {
+                this.rolesGrid.Rows.Add("NO POSEE ROLES HABILITADOS");
+            }
             foreach (var role in roles)
             {
                 this.rolesGrid.Rows.Add(role);
@@ -48,7 +52,14 @@ namespace Aplicacion_1
             }
             else
             {
-                rolCell = this.rolesGrid.Rows[0].Cells[0].Value.ToString();
+                if(this.rolesGrid.Rows.Count > 0)
+                {
+                    rolCell = this.rolesGrid.Rows[0].Cells[0].Value.ToString();
+                }
+                else
+                {
+                    this.aplicativosGrid.Rows.Add("NO HAY APLICATIVOS DISPONIBLES");
+                }
             }
 
             LinkedList<string> aplicativos = new LinkedList<string>();

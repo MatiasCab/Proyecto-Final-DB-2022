@@ -56,7 +56,15 @@ namespace Aplicacion_1
                 }
                 else
                 {
-                    rolCell = this.rolesAplicativosGrid.Rows[0].Cells[0].Value.ToString();
+                    if(this.rolesAplicativosGrid.Rows.Count > 0)
+                    {
+                        rolCell = this.rolesAplicativosGrid.Rows[0].Cells[0].Value.ToString();
+                    }
+                    else
+                    {
+
+                    }
+                    
                 }
 
                 LinkedList<string> menu = new LinkedList<string>();

@@ -26,6 +26,8 @@ namespace Aplicacion_1
         private void button1_Click(object sender, EventArgs e)
         {
             this.crearUsuario();
+            Form3 form3 = new Form3();
+            form3.ShowDialog();
         }
 
         private void getRoles()

@@ -31,8 +31,6 @@ namespace Aplicacion_1
             }
             else{
             var form = new Form1(user);
-            var form3 = new Form5();
-            form3.ShowDialog();
             form.ShowDialog();
             }
         }

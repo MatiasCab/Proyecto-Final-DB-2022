@@ -69,16 +69,18 @@ namespace Aplicacion_1
                 if (isFirst)
                 {
                     isFirst = false;
-                    user = new Usuario(appReader.GetInt32(0), null, null, null, appReader.GetString(6));
+                    user = new Usuario(appReader.GetInt32(0), appReader.GetString(1), appReader.GetString(2), appReader.GetString(3), appReader.GetString(6));
                 }
-                //user.InsertRolNegApp(appReader.GetString(5), appReader.GetString(4));
+                user.InsertRolNegApp(appReader.GetString(5), appReader.GetString(4));
             }
 
             if (isFirst)
             {
                 return null;
             }
+
             MySQLHandler.getInstance().close(appReader);
+
             bool logueoCorrecto = BCryptNet.Verify(password, user.hashpwd);
             if(logueoCorrecto){
                 return user;
