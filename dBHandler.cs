@@ -83,7 +83,8 @@ namespace Aplicacion_1
             return cmd.ExecuteReader();
         }
 
-        public MySqlDataReader GetQuestions(){
+        public MySqlDataReader GetQuestions()
+        {
             this.connectToDatabase();
             string sqlQuery = $"SELECT * FROM PREGUNTAS";
 
@@ -109,7 +110,8 @@ namespace Aplicacion_1
             return cmd.ExecuteReader();
         }
 
-        public void createResponse(int id,  int id_pregunta, string respuesta){
+        public void createResponse(int id, int id_pregunta, string respuesta)
+        {
             this.connectToDatabase();
             string sqlQuery = $"INSERT INTO PERSONAS_PREGUNTAS VALUES ({id}, {id_pregunta}, '{respuesta}')";
 
@@ -117,7 +119,8 @@ namespace Aplicacion_1
             cmd.ExecuteNonQuery();
         }
 
-        public void CreateUser(int id, string nombre, string apellido, string direccion, string ciudad, string departamento, string hashpwd){
+        public void CreateUser(int id, string nombre, string apellido, string direccion, string ciudad, string departamento, string hashpwd)
+        {
             this.connectToDatabase();
             string sqlQuery = $"INSERT INTO PERSONAS VALUES ('{id}', '{nombre}', '{apellido}', '{direccion}', '{ciudad}', '{departamento}', '{hashpwd}')";
 
@@ -125,7 +128,8 @@ namespace Aplicacion_1
             cmd.ExecuteNonQuery();
         }
 
-        public void CreatePermiso(int user_id, string app_id, int rol_neg_id, DateTime fecha_solicitud, DateTime? fecha_autorizacion, bool estado){
+        public void CreatePermiso(int user_id, string app_id, int rol_neg_id, DateTime fecha_solicitud, DateTime? fecha_autorizacion, bool estado)
+        {
             this.connectToDatabase();
             string sqlQuery = $"INSERT INTO PERMISOS VALUES ('{user_id}', '{app_id}', '{rol_neg_id}', '{fecha_solicitud}', '{fecha_autorizacion}', '{estado}')";
 
@@ -133,7 +137,8 @@ namespace Aplicacion_1
             cmd.ExecuteNonQuery();
         }
 
-        public void UpdatePermiso(Permiso permiso){
+        public void UpdatePermiso(Permiso permiso)
+        {
             this.connectToDatabase();
             string sqlQuery = $"UPDATE PERMISOS SET fecha_autorizacion = {permiso.fecha_autorizacion}, estado = '{permiso.estado}' WHERE user_id = {permiso.user_id} AND app_id = '{permiso.app_id}' AND rol_neg_id = {permiso.rol_neg_id} AND fecha_solicitud = {permiso.fecha_solicitud}";
 
@@ -141,7 +146,8 @@ namespace Aplicacion_1
             cmd.ExecuteNonQuery();
         }
 
-        public MySqlDataReader GetPermisos(){
+        public MySqlDataReader GetPermisos()
+        {
             this.connectToDatabase();
             string sqlQuery = $"SELECT * FROM PERMISOS";
 
@@ -149,7 +155,8 @@ namespace Aplicacion_1
             return cmd.ExecuteReader();
         }
 
-        public MySqlDataReader GetPersonasPreguntas(int id){
+        public MySqlDataReader GetPersonasPreguntas(int id)
+        {
             this.connectToDatabase();
             string sqlQuery = $"SELECT * PERSONAS_PREGUNTAS WHERE user_id = {id}";
 
@@ -168,7 +175,8 @@ namespace Aplicacion_1
             return reader;
         }
 
-        public MySqlDataReader GetPreguntaById(int id){
+        public MySqlDataReader GetPreguntaById(int id)
+        {
             this.connectToDatabase();
             string sqlQuery = $"SELECT * FROM PREGUNTAS WHERE preg_id = {id}";
 
@@ -176,11 +184,13 @@ namespace Aplicacion_1
             return cmd.ExecuteReader();
         }
 
-        public void UpdateUser(Usuario user){
+        public void UpdateUser(Usuario user)
+        {
             this.connectToDatabase();
-            string sqlQuery = $"UPDATE PERSONAS SET  hashpwd = '{user.hashpwd}' WHERE user_id = {user.id}";
-            
+            string sqlQuery = $"UPDATE PERSONAS SET  hashpwd = '{user.hashpwd}' WHERE user_id = {user.userId}";
+
             var cmd = new MySqlCommand(sqlQuery, db);
             cmd.ExecuteReader();
-        } 
+        }
+    }
 }

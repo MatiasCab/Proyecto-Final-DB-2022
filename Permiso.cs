@@ -7,7 +7,7 @@ namespace Aplicacion_1
         public int user_id { get; set; }
         public string app_id { get; set; }
         public int rol_neg_id { get; set; }
-        public DateTime fecha_solicitud { get; set; }
+        public DateTime? fecha_solicitud { get; set; }
         public DateTime? fecha_autorizacion { get; set; }
         public bool estado { get; set; }
 
