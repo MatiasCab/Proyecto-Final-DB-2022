@@ -81,15 +81,15 @@ namespace Aplicacion_1
 
         }
 
-        public void createResponse(string id,  string id_pregunta, string respuesta){
+        public void createResponse(int id,  int id_pregunta, string respuesta){
             this.connectToDatabase();
-            string sqlQuery = $"INSERT INTO PERSONAS_PREGUNTAS VALUES ('{id}', '{id_pregunta}', '{respuesta}')";
+            string sqlQuery = $"INSERT INTO PERSONAS_PREGUNTAS VALUES ({id}, {id_pregunta}, '{respuesta}')";
 
             var cmd = new MySqlCommand(sqlQuery, db);
             cmd.ExecuteNonQuery();
         }
 
-        public void CreateUser(string id, string nombre, string apellido, string direccion, string ciudad, string departamento, string hashpwd){
+        public void CreateUser(int id, string nombre, string apellido, string direccion, string ciudad, string departamento, string hashpwd){
             this.connectToDatabase();
             string sqlQuery = $"INSERT INTO PERSONAS VALUES ('{id}', '{nombre}', '{apellido}', '{direccion}', '{ciudad}', '{departamento}', '{hashpwd}')";
 

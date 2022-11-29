@@ -74,7 +74,7 @@ namespace Aplicacion_1
 
         }
 
-        public static void CreateUser(string id, string nombres, string apellidos, string direccion, string ciudad, string departamento, string password)
+        public static void CreateUser(int id, string nombres, string apellidos, string direccion, string ciudad, string departamento, string password)
         {
             string hashedPassword = BCryptNet.HashPassword(password);
             MySQLHandler.getInstance().CreateUser(id, nombres, apellidos, direccion, ciudad, departamento, hashedPassword);
@@ -88,7 +88,7 @@ namespace Aplicacion_1
             MySQLHandler.getInstance().AprobarPermiso(user_id, app_id, rol_neg_id, fecha_solicitud, fecha_autorizacion, estado);
         }
 
-        public static void CreateResponse(string id,  string id_pregunta, string respuesta){
+        public static void CreateResponse(int id,  int id_pregunta, string respuesta){
             MySQLHandler.getInstance().createResponse(id, id_pregunta, respuesta);
         }
         

@@ -20,7 +20,7 @@ namespace Aplicacion_1
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            this.crearUsuario();
         }
         
         private LinkedList<Pregunta> preguntas = new LinkedList<Pregunta>();
@@ -82,10 +82,10 @@ namespace Aplicacion_1
             
         }
         
-        private getIdPregunta(textoPregunta){
+        private int getIdPregunta( string textoPregunta){
             foreach(Pregunta p in preguntas){
                 if(p.pregunta == textoPregunta){
-                    return p.id;
+                    return p.preg_id;
                 }
             }
             return -1;
@@ -94,33 +94,33 @@ namespace Aplicacion_1
 
 
         private void crearUsuario(){
-            string pregunta1 = getIdPregunta(this.pregunta1.Text);
-            string pregunta2 = getIdPregunta(this.pregunta2.Text);
-            string pregunta3 = getIdPregunta(this.pregunta3.Text);
+            int pregunta1 = getIdPregunta(this.pregunta1.Text);
+            int pregunta2 = getIdPregunta(this.pregunta2.Text);
+            int pregunta3 = getIdPregunta(this.pregunta3.Text);
             string respuesta1 = this.respuesta1.Text;
             string respuesta2 = this.respuesta2.Text;
             string respuesta3 = this.respuesta3.Text;
 
-            string ci = this.userCI.Text;
+            int ci = Int32.Parse(this.userCI.Text);
 
-            //create response
-            if(ci != null){
-                Logica.CreateResponse(ci, pregunta1, respuesta1);
-                Logica.CreateResponse(ci, pregunta2, respuesta2);
-                Logica.CreateResponse(ci, pregunta3, respuesta3);
-            }
-            
             //create user
-            string nombres      = this.userName.Text;
-            string apellidos    = this.lastName.Text;
-            string direccion    = this.Direccion.Text;
-            string ciudad       = this.Ciudad.Text;
+            string nombres = this.userName.Text;
+            string apellidos = this.lastName.Text;
+            string direccion = this.Direccion.Text;
+            string ciudad = this.Ciudad.Text;
             string departamento = this.departamento.Text;
-            string password     = this.password.Text;
-            if(ci != null && nombres != null && apellidos != null && direccion != null && ciudad != null && departamento != null && password != null){
+            string password = this.password.Text;
+            if (nombres != null && apellidos != null && direccion != null && ciudad != null && departamento != null && password != null)
+            {
                 Logica.CreateUser(ci, nombres, apellidos, direccion, ciudad, departamento, password);
             }
 
+
+            //create response
+            Logica.CreateResponse(ci, pregunta1, respuesta1);
+                Logica.CreateResponse(ci, pregunta2, respuesta2);
+                Logica.CreateResponse(ci, pregunta3, respuesta3);
+            
             //create permiso
             
             
