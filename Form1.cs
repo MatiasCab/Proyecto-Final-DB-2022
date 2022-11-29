@@ -19,6 +19,7 @@ namespace Aplicacion_1
             this.user = user;
             InitializeComponent();
             this.setData(user);
+            this.setAplicativosData();
         }
 
         private void setData(Usuario user)
@@ -26,30 +27,43 @@ namespace Aplicacion_1
             var aplicativos = user.rolesNegocio.Values;
             var roles = user.rolesNegocio.Keys;
 
-            foreach(var aplicativo in aplicativos)
-            {
-                foreach(var app in aplicativo)
-                {
-                    this.aplicativosGrid.Rows.Add(app);
-                }
-            }
-
-            foreach(var role in roles)
+            foreach (var role in roles)
             {
                 this.rolesGrid.Rows.Add(role);
             }
+
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void setAplicativosData()
         {
-            //List<Permiso> permisos = MySQLHandler.getInstance().RetrieveData();
+            this.aplicativosGrid.Rows.Clear();
 
-           // this.dataGridVPermisos.Rows.Clear();
+            int selectedCellCount = this.rolesGrid.GetCellCount(DataGridViewElementStates.Selected);
 
-            //foreach (Permiso permiso in permisos)
-            //{
-                //this.dataGridVPermisos.Rows.Add(permiso.user_id, permiso.app_id, permiso.rol_neg_id, permiso.fecha_solicitud, permiso.fecha_autorizacion == null ? "NULL" : permiso.fecha_autorizacion.ToString(), permiso.estado);
-            //}
+            string rolCell = "";
+
+            if (selectedCellCount > 0)
+            {
+                rolCell = this.rolesGrid.SelectedCells[0].Value.ToString();
+            }
+            else
+            {
+                rolCell = this.rolesGrid.Rows[0].Cells[0].Value.ToString();
+            }
+
+            LinkedList<string> aplicativos = new LinkedList<string>();
+
+            this.user.rolesNegocio.TryGetValue(rolCell, out aplicativos);
+
+            foreach (var app in aplicativos)
+            {
+                this.aplicativosGrid.Rows.Add(app);
+            }
+        }
+
+        private void rolesGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            this.setAplicativosData();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -62,14 +76,13 @@ namespace Aplicacion_1
 
         }
 
-        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void aplicativosGrid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            string rolCell = this.rolesGrid.SelectedCells[0].Value.ToString();
+            string aplicativoCell = this.aplicativosGrid.SelectedCells[0].Value.ToString();
 
-        }
-
-        private void rolesGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
+            var form = new Form4(aplicativoCell, rolCell);
+            form.ShowDialog();
         }
     }
 }

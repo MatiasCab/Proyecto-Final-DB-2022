@@ -40,3 +40,7 @@ C:\Users\Matias\Documents\Universidad L\Base de Datos\Proyecto\Aplicacion-1\obj\
 C:\Users\Matias\Documents\Universidad L\Base de Datos\Proyecto\Aplicacion-1\obj\Debug\Aplicacion-1.csproj.CopyComplete
 C:\Users\Matias\Documents\Universidad L\Base de Datos\Proyecto\Aplicacion-1\obj\Debug\Aplicacion_1.Form2.resources
 C:\Users\Matias\Documents\Universidad L\Base de Datos\Proyecto\Aplicacion-1\obj\Debug\Aplicacion_1.Form3.resources
+C:\Users\Matias\Documents\Universidad L\Base de Datos\Proyecto\Aplicacion-1\obj\Debug\Aplicacion_1.Form4.resources
+C:\Users\Matias\Documents\Universidad L\Base de Datos\Proyecto\Aplicacion-1\bin\Debug\BCrypt.Net-Next.dll
+C:\Users\Matias\Documents\Universidad L\Base de Datos\Proyecto\Aplicacion-1\bin\Debug\BCrypt.Net-Next.xml
+C:\Users\Matias\Documents\Universidad L\Base de Datos\Proyecto\Aplicacion-1\obj\Debug\Aplicacion_1.Form5.resources

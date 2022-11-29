@@ -19,14 +19,14 @@ namespace Aplicacion_1
             this.rolesNegocio = new Dictionary<string, LinkedList<string>>();
         }
 
-        public void InsertRolNegApp(string rolNeg, string appId)
+        public void InsertRolNegApp(string rolNeg, string app)
         {
             if (!this.rolesNegocio.ContainsKey(rolNeg))
             {
                 this.rolesNegocio.Add(rolNeg, new LinkedList<string>());
             }
             this.rolesNegocio.TryGetValue(rolNeg, out LinkedList<string> value);
-            value.AddLast(appId);
+            value.AddLast(app);
         }
     }
 }
