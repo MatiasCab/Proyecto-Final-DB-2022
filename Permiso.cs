@@ -4,12 +4,12 @@ namespace Aplicacion_1
 {
     public class Permiso
     {
-        public int user_id { get; private set; }
-        public string app_id { get; private set; }
-        public int rol_neg_id { get; private set; }
-        public DateTime fecha_solicitud { get; private set; }
-        public DateTime? fecha_autorizacion { get; private set; }
-        public bool estado { get; private set; }
+        public int user_id { get; set; }
+        public string app_id { get; set; }
+        public int rol_neg_id { get; set; }
+        public DateTime fecha_solicitud { get; set; }
+        public DateTime? fecha_autorizacion { get; set; }
+        public bool estado { get; set; }
 
         public Permiso(int user_id, string app_id, int rol_neg_id, DateTime fecha_solicitud,
             DateTime? fecha_autorizacion, bool estado)

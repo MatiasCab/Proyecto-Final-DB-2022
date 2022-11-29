@@ -39,9 +39,6 @@
             this.respuesta3 = new System.Windows.Forms.TextBox();
             this.respuesta2 = new System.Windows.Forms.TextBox();
             this.respuesta1 = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.checkRol = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.rolName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pregunta1 = new System.Windows.Forms.ComboBox();
             this.pregunta2 = new System.Windows.Forms.ComboBox();
             this.pregunta3 = new System.Windows.Forms.ComboBox();
@@ -52,7 +49,13 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.aplicativosGrid = new System.Windows.Forms.DataGridView();
+            this.appSelected = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rolesGrid = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.aplicativosGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rolesGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // userCI
@@ -110,7 +113,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(196, 105);
             this.button1.TabIndex = 7;
-            this.button1.Text = "button1";
+            this.button1.Text = "Registrarse";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -118,49 +121,22 @@
             // 
             this.respuesta3.Location = new System.Drawing.Point(433, 125);
             this.respuesta3.Name = "respuesta3";
-            this.respuesta3.Size = new System.Drawing.Size(100, 20);
+            this.respuesta3.Size = new System.Drawing.Size(161, 20);
             this.respuesta3.TabIndex = 11;
             // 
             // respuesta2
             // 
             this.respuesta2.Location = new System.Drawing.Point(433, 85);
             this.respuesta2.Name = "respuesta2";
-            this.respuesta2.Size = new System.Drawing.Size(100, 20);
+            this.respuesta2.Size = new System.Drawing.Size(161, 20);
             this.respuesta2.TabIndex = 12;
             // 
             // respuesta1
             // 
             this.respuesta1.Location = new System.Drawing.Point(433, 41);
             this.respuesta1.Name = "respuesta1";
-            this.respuesta1.Size = new System.Drawing.Size(100, 20);
+            this.respuesta1.Size = new System.Drawing.Size(161, 20);
             this.respuesta1.TabIndex = 13;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.checkRol,
-            this.rolName});
-            this.dataGridView1.Location = new System.Drawing.Point(218, 189);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(506, 166);
-            this.dataGridView1.TabIndex = 14;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // checkRol
-            // 
-            this.checkRol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.checkRol.FillWeight = 10F;
-            this.checkRol.HeaderText = "";
-            this.checkRol.Name = "checkRol";
-            this.checkRol.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.checkRol.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // rolName
-            // 
-            this.rolName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.rolName.HeaderText = "Nombre del rol";
-            this.rolName.Name = "rolName";
             // 
             // pregunta1
             // 
@@ -253,11 +229,53 @@
             this.label7.TabIndex = 24;
             this.label7.Text = "Contraseña:";
             // 
+            // aplicativosGrid
+            // 
+            this.aplicativosGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.aplicativosGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.appSelected,
+            this.dataGridViewTextBoxColumn1});
+            this.aplicativosGrid.Location = new System.Drawing.Point(459, 189);
+            this.aplicativosGrid.Name = "aplicativosGrid";
+            this.aplicativosGrid.Size = new System.Drawing.Size(274, 166);
+            this.aplicativosGrid.TabIndex = 25;
+            // 
+            // appSelected
+            // 
+            this.appSelected.FillWeight = 10F;
+            this.appSelected.HeaderText = "";
+            this.appSelected.Name = "appSelected";
+            this.appSelected.Width = 30;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn1.HeaderText = "Aplicativo";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // rolesGrid
+            // 
+            this.rolesGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.rolesGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn3});
+            this.rolesGrid.Location = new System.Drawing.Point(218, 189);
+            this.rolesGrid.Name = "rolesGrid";
+            this.rolesGrid.Size = new System.Drawing.Size(235, 166);
+            this.rolesGrid.TabIndex = 26;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn3.HeaderText = "Roles";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
             // Form5
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(745, 450);
+            this.ClientSize = new System.Drawing.Size(745, 379);
+            this.Controls.Add(this.rolesGrid);
+            this.Controls.Add(this.aplicativosGrid);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -268,7 +286,6 @@
             this.Controls.Add(this.pregunta3);
             this.Controls.Add(this.pregunta2);
             this.Controls.Add(this.pregunta1);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.respuesta1);
             this.Controls.Add(this.respuesta2);
             this.Controls.Add(this.respuesta3);
@@ -283,7 +300,8 @@
             this.Name = "Form5";
             this.Text = "Form5";
             this.Load += new System.EventHandler(this.Form5_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aplicativosGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rolesGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -302,9 +320,6 @@
         private System.Windows.Forms.TextBox respuesta3;
         private System.Windows.Forms.TextBox respuesta2;
         private System.Windows.Forms.TextBox respuesta1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn rolName;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn checkRol;
         private System.Windows.Forms.ComboBox pregunta1;
         private System.Windows.Forms.ComboBox pregunta2;
         private System.Windows.Forms.ComboBox pregunta3;
@@ -315,5 +330,11 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.DataGridView aplicativosGrid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn appSelected;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridView rolesGrid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
     }
 }

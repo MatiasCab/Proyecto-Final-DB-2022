@@ -22,7 +22,8 @@ namespace Aplicacion_1
             string userId = this.userText.Text;
             string password = this.password.Text;
 
-            var form = new Form1(Logica.Login(userId, password));
+
+            var form = new Form1(Logica.LoginHashPass(userId, password));
             var form3 = new Form5();
             form3.ShowDialog();
             form.ShowDialog();
